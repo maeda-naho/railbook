@@ -15,8 +15,10 @@
   # GET /books/new
   def new
     @book = Book.new
+    @book.price = 0
+    @book.cd = true
   end
-
+                                       
   # GET /books/1/edit
   def edit
   end
@@ -28,7 +30,7 @@
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: '登録が完了しました。' }
+        format.html { redirect_to new_book_path, notice:"「#{@book.title}」 登録が完了しました。" }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
