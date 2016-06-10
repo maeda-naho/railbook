@@ -62,8 +62,8 @@
   end
 
   def search
- @books = Book.where(cd: true)
-render :index
+    @books = Book.where(title: params["search"]["title"])
+    render :index
   end
 
   private
