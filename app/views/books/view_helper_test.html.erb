@@ -1,0 +1,9 @@
+<%= text_field :isbn %>
+<%= number_field :page, :name %>
+<%= text_area :book, :memo %>
+<%= check_box :book, :cd, {}, 0, 1 %>
+<%= radio_button :user, :color, "red"  %>
+<%= select :user, :address, ["o‰_Žs","¼]Žs","‰_“ìŽs"] %>
+<%= collection_select(:book, :publish, Publish.all, :id, :publishname) %>
+<%= link_to 'Edit', edit_book_path(book) %>
+<%= image_tag 'izumosyo.jpg' %>
