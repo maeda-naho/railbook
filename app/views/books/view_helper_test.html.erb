@@ -1,9 +1,13 @@
-<%= text_field :isbn %>
-<%= number_field :page, :name %>
-<%= text_area :book, :memo %>
-<%= check_box :book, :cd, {}, 0, 1 %>
-<%= radio_button :user, :color, "red"  %>
-<%= select :user, :address, ["�o�_�s","���]�s","�_��s"] %>
-<%= collection_select(:book, :publish, Publish.all, :id, :publishname) %>
-<%= link_to 'Edit', edit_book_path(book) %>
+﻿<%= text_field :book, :isbn %>
+<%= number_field :book, :isbn %>
+<%= radio_button :user, :color, "red" %>赤
+<%= check_box :book, :id, {}, 0, 1 %>
+<%= select :user, :address, ["出雲市","松江市","雲南市"] %>
+<%= link_to 'Back', books_path %>
 <%= image_tag 'izumosyo.jpg' %>
+<%= text_area :book, :memo %>
+<select id="book_publish" name="book[publish]">  
+<option value="1">技術評論社</option> 
+<option value="2">翔泳社</option> 
+<option value="3">マイナビ</option>  
+</select>  
