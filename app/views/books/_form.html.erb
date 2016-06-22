@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :isbn %><br>
-    <%= f.text_field :isbn %>
+    <%= f.text_field :isbn, :maxlength => 13 %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :publish %><br>
-    <%= f.text_field :publish %>
+    <%= f.collection_select(:publish, Publish.all, :publishname, :publishname, :include_blank => true) %>
   </div>
   <div class="field">
     <%= f.label :published %><br>
