@@ -63,7 +63,7 @@
 
   def search
     @name =  params["search"]["title"]
-    @books = Book.where(title: params["search"]["title"])
+    @books = Book.where("title like '%#{params["search"]["title"]}%'")
     render :index
   end
 
@@ -72,7 +72,7 @@
     def set_book
       @book = Book.find(params[:id])
     end
-
+	
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
       params.require(:book).permit(:isbn, :title, :price, :publish, :published, :cd)
