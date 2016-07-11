@@ -1,3 +1,3 @@
-class Book < ActiveRecord::Base
- validates_length_of :isbn,:maximum=>13
+﻿class Book < ActiveRecord::Base
+ has_many :reviews
 end
