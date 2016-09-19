@@ -7,7 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
+
 <%= image_tag 'railbook.png' %>
+ <div align = "right">
+  ログインユーザー:<%= session[:usrn] %>
+  <%= link_to "ログアウト" , controller: :login, action: :index %>
+</div>
+
+
+
 <ul>
 <li><%= link_to "書籍一覧", books_path %></li>
 <li><%= link_to"出版社一覧", publishes_path %></li>
